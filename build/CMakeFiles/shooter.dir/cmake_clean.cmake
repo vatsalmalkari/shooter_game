@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/shooter.dir/src/Mesh.cpp.o"
+  "CMakeFiles/shooter.dir/src/Mesh.cpp.o.d"
   "CMakeFiles/shooter.dir/src/Shader.cpp.o"
   "CMakeFiles/shooter.dir/src/Shader.cpp.o.d"
   "CMakeFiles/shooter.dir/src/camera.cpp.o"

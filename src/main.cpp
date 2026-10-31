@@ -10,6 +10,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "camera.hpp"
 #include "Shader.hpp"
+#include "Mesh.hpp"
 #include <memory>
 
 static void GLClearError() {
@@ -30,60 +31,19 @@ int gScreenHeight = 640;
 int gScreenWidth = 480;
 SDL_Window*  gGraphicsApplicationWindow = nullptr;
 SDL_GLContext gOpenGLContext = nullptr;
-GLuint gVertexArrayObject = 0;
-GLuint gVertexBufferObject = 0;
-GLuint gIndexBufferObject = 0;
 bool gQuit = false;
 float g_uOffset = -2.0f;
 float g_uRotate = 0.0f;
 float g_uScale = 0.5f;
 Camera gCamera;
 std::unique_ptr<Shader> gShader;
+std::unique_ptr<Mesh> gMesh;
 
 void GetOpenGLVersionInfo() {
     std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
     std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
     std::cout << "Version: " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLSL Version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
-}
-
-void VertexSpecification() {
-    const std::vector<GLfloat> vertexData = {
-        // 0 vertex
-        -0.5f, -0.5f, 0.0f,
-         1.0f, 0.0f, 0.0f,
-         //1 vertex
-         0.5f, -0.5f, 0.0f,
-         0.0f, 1.0f, 0.0f,
-         //2 vertex
-         -0.5f, 0.5f, 0.0f, 
-         0.0f, 0.0f, 1.0f,
-         // 3 vertex
-         0.5f, 0.5f, 0.0f,
-         0.0f, 0.0f, 1.0f
-    };
-    glGenVertexArrays(1, &gVertexArrayObject);
-    glBindVertexArray(gVertexArrayObject);
-
-    const std::vector<GLuint> indexBufferData = {2,0,1, 3, 2, 1};
-    // start generating vertex buffer object
-    glGenBuffers(1, &gVertexBufferObject);
-    glBindBuffer(GL_ARRAY_BUFFER, gVertexBufferObject);
-    glBufferData(GL_ARRAY_BUFFER, vertexData.size() * sizeof(GLfloat), vertexData.data(), GL_STATIC_DRAW);
-
-
-    glGenBuffers(1, &gIndexBufferObject);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, gIndexBufferObject);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexBufferData.size() * sizeof(GLuint), indexBufferData.data(), GL_STATIC_DRAW);
-     // now linking up the attributes in our vao
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (GLvoid*)(3 * sizeof(GLfloat)));
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 6, (void*)0);
-    glBindVertexArray(0);
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
 }
 
 void InitializeProgram() {
@@ -186,8 +146,7 @@ void PreDraw(){
 }
 
 void Draw(){
-    glBindVertexArray(gVertexArrayObject);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    gMesh->Draw();
 }
 
 
@@ -203,9 +162,7 @@ void MainLoop() {
 
 void Cleanup() {
     gShader.reset();
-    glDeleteBuffers(1, &gVertexBufferObject);
-    glDeleteBuffers(1, &gIndexBufferObject);
-    glDeleteVertexArrays(1, &gVertexArrayObject);
+    gMesh.reset();
     SDL_GL_DeleteContext(gOpenGLContext);
     SDL_DestroyWindow(gGraphicsApplicationWindow);
     SDL_Quit();
@@ -214,7 +171,15 @@ void Cleanup() {
 int main() {
     InitializeProgram();
     gShader = std::make_unique<Shader>("shaders/vert.glsl", "shaders/frag.glsl");
-    VertexSpecification();
+    gMesh = std::make_unique<Mesh>(
+        std::vector<float>{
+            -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
+            0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
+            -0.5f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f,
+            0.5f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f
+        },
+        std::vector<unsigned int>{2, 0, 1, 3, 2, 1}
+    );
     MainLoop();
     Cleanup();
     return 0;

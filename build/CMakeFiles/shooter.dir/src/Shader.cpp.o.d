@@ -1,7 +1,7 @@
 CMakeFiles/shooter.dir/src/Shader.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/SDKSettings.json \
   /Users/vatsa/Downloads/personal_projects/opengl/src/Shader.cpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/src/Shader.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Shader.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/comp.h \

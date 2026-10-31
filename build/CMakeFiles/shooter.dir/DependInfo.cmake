@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/vatsa/Downloads/personal_projects/opengl/src/glad.c" "CMakeFiles/shooter.dir/src/glad.c.o" "gcc" "CMakeFiles/shooter.dir/src/glad.c.o.d"
+  "/Users/vatsa/Downloads/personal_projects/opengl/src/Mesh.cpp" "CMakeFiles/shooter.dir/src/Mesh.cpp.o" "gcc" "CMakeFiles/shooter.dir/src/Mesh.cpp.o.d"
   "/Users/vatsa/Downloads/personal_projects/opengl/src/Shader.cpp" "CMakeFiles/shooter.dir/src/Shader.cpp.o" "gcc" "CMakeFiles/shooter.dir/src/Shader.cpp.o.d"
   "/Users/vatsa/Downloads/personal_projects/opengl/src/camera.cpp" "CMakeFiles/shooter.dir/src/camera.cpp.o" "gcc" "CMakeFiles/shooter.dir/src/camera.cpp.o.d"
   "/Users/vatsa/Downloads/personal_projects/opengl/src/main.cpp" "CMakeFiles/shooter.dir/src/main.cpp.o" "gcc" "CMakeFiles/shooter.dir/src/main.cpp.o.d"
