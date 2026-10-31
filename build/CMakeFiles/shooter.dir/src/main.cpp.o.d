@@ -1130,4 +1130,5 @@ CMakeFiles/shooter.dir/src/main.cpp.o: \
   /opt/homebrew/include/glm/gtc/../geometric.hpp \
   /opt/homebrew/include/glm/gtc/../trigonometric.hpp \
   /opt/homebrew/include/glm/gtc/../matrix.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/camera.hpp
+  /Users/vatsa/Downloads/personal_projects/opengl/include/camera.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/src/Shader.hpp

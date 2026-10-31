@@ -2002,6 +2002,7 @@ CMakeFiles/shooter.dir/src/main.cpp.o: /Users/vatsa/Downloads/personal_projects/
   /Users/vatsa/Downloads/personal_projects/opengl/include/KHR/khrplatform.h \
   /Users/vatsa/Downloads/personal_projects/opengl/include/camera.hpp \
   /Users/vatsa/Downloads/personal_projects/opengl/include/glad/glad.h \
+  /Users/vatsa/Downloads/personal_projects/opengl/src/Shader.hpp \
   /opt/homebrew/include/SDL2/SDL.h \
   /opt/homebrew/include/SDL2/SDL_assert.h \
   /opt/homebrew/include/SDL2/SDL_atomic.h \
@@ -4107,6 +4108,8 @@ CMakeFiles/shooter.dir/src/main.cpp.o: /Users/vatsa/Downloads/personal_projects/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/stable_sort.h:
+
+/Users/vatsa/Downloads/personal_projects/opengl/src/Shader.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h:
 

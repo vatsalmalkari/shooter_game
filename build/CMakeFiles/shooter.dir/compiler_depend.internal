@@ -2005,6 +2005,7 @@ CMakeFiles/shooter.dir/src/main.cpp.o
  /Users/vatsa/Downloads/personal_projects/opengl/include/KHR/khrplatform.h
  /Users/vatsa/Downloads/personal_projects/opengl/include/camera.hpp
  /Users/vatsa/Downloads/personal_projects/opengl/include/glad/glad.h
+ /Users/vatsa/Downloads/personal_projects/opengl/src/Shader.hpp
  /opt/homebrew/include/SDL2/SDL.h
  /opt/homebrew/include/SDL2/SDL_assert.h
  /opt/homebrew/include/SDL2/SDL_atomic.h
