@@ -67,27 +67,46 @@ std::string LoadShaderAsString(const std:: string& filename){
     return result;
 }
 
-GLuint CompileShader(GLuint type, const std::string&source){
+GLuint CompileShader(GLuint type, const std::string& source) {
     GLuint shaderObject;
     if(type == GL_VERTEX_SHADER) {
         shaderObject = glCreateShader(GL_VERTEX_SHADER);
     } else if(type == GL_FRAGMENT_SHADER) {
         shaderObject = glCreateShader(GL_FRAGMENT_SHADER);
+    } else {
+        std::cout << "ERROR: unknown shader type" << std::endl;
+        return 0;
     }
 
     const char* src = source.c_str();
     glShaderSource(shaderObject, 1, &src, nullptr);
     glCompileShader(shaderObject);
+
+    GLint success;
+    char infoLog[512];
+    glGetShaderiv(shaderObject, GL_COMPILE_STATUS, &success);
+    if(!success) {
+        glGetShaderInfoLog(shaderObject, 512, nullptr, infoLog);
+        std::cout << "ERROR::SHADER::COMPILATION_FAILED" << infoLog << std::endl;
+    }
     return shaderObject;
 }
+
 GLuint CreateShaderProgram(const std::string& vertexShaderSource, const std::string& fragmentShaderSource) {
     GLuint programObject = glCreateProgram();
     GLuint myVertexShader = CompileShader(GL_VERTEX_SHADER, vertexShaderSource);
     GLuint myFragmentShader = CompileShader(GL_FRAGMENT_SHADER, fragmentShaderSource);
-
+    
     glAttachShader(programObject, myVertexShader);
     glAttachShader(programObject, myFragmentShader);
     glLinkProgram(programObject);
+    GLint success;
+    char infoLog[512];
+    glGetProgramiv(programObject, GL_LINK_STATUS, &success);
+    if(!success) {
+        glGetProgramInfoLog(programObject, 512, nullptr, infoLog);
+        std::cout << "ERROR::SHADER::LINKING_FAILED" << infoLog << std::endl;
+    }
 
     glValidateProgram(programObject);
     return programObject;
