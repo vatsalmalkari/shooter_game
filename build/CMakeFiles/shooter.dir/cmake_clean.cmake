@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/shooter.dir/src/Mesh.cpp.o"
-  "CMakeFiles/shooter.dir/src/Mesh.cpp.o.d"
+  "CMakeFiles/shooter.dir/src/Game.cpp.o"
+  "CMakeFiles/shooter.dir/src/Game.cpp.o.d"
   "CMakeFiles/shooter.dir/src/Shader.cpp.o"
   "CMakeFiles/shooter.dir/src/Shader.cpp.o.d"
   "CMakeFiles/shooter.dir/src/camera.cpp.o"
@@ -9,6 +9,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/shooter.dir/src/glad.c.o.d"
   "CMakeFiles/shooter.dir/src/main.cpp.o"
   "CMakeFiles/shooter.dir/src/main.cpp.o.d"
+  "CMakeFiles/shooter.dir/src/mesh.cpp.o"
+  "CMakeFiles/shooter.dir/src/mesh.cpp.o.d"
+  "CMakeFiles/shooter.dir/src/player.cpp.o"
+  "CMakeFiles/shooter.dir/src/player.cpp.o.d"
+  "CMakeFiles/shooter.dir/src/texture.cpp.o"
+  "CMakeFiles/shooter.dir/src/texture.cpp.o.d"
   "shooter"
   "shooter.pdb"
 )

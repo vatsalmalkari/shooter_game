@@ -1132,4 +1132,10 @@ CMakeFiles/shooter.dir/src/main.cpp.o: \
   /opt/homebrew/include/glm/gtc/../matrix.hpp \
   /Users/vatsa/Downloads/personal_projects/opengl/include/camera.hpp \
   /Users/vatsa/Downloads/personal_projects/opengl/include/Shader.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/Mesh.hpp
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Mesh.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Texture.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/forward_list \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/player.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Entity.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Game.hpp

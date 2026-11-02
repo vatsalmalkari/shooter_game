@@ -128,19 +128,61 @@ CMakeFiles/shooter.dir/src/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shooter.dir/src/Shader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vatsa/Downloads/personal_projects/opengl/src/Shader.cpp -o CMakeFiles/shooter.dir/src/Shader.cpp.s
 
-CMakeFiles/shooter.dir/src/Mesh.cpp.o: CMakeFiles/shooter.dir/flags.make
-CMakeFiles/shooter.dir/src/Mesh.cpp.o: /Users/vatsa/Downloads/personal_projects/opengl/src/Mesh.cpp
-CMakeFiles/shooter.dir/src/Mesh.cpp.o: CMakeFiles/shooter.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/shooter.dir/src/Mesh.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shooter.dir/src/Mesh.cpp.o -MF CMakeFiles/shooter.dir/src/Mesh.cpp.o.d -o CMakeFiles/shooter.dir/src/Mesh.cpp.o -c /Users/vatsa/Downloads/personal_projects/opengl/src/Mesh.cpp
+CMakeFiles/shooter.dir/src/mesh.cpp.o: CMakeFiles/shooter.dir/flags.make
+CMakeFiles/shooter.dir/src/mesh.cpp.o: /Users/vatsa/Downloads/personal_projects/opengl/src/mesh.cpp
+CMakeFiles/shooter.dir/src/mesh.cpp.o: CMakeFiles/shooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/shooter.dir/src/mesh.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shooter.dir/src/mesh.cpp.o -MF CMakeFiles/shooter.dir/src/mesh.cpp.o.d -o CMakeFiles/shooter.dir/src/mesh.cpp.o -c /Users/vatsa/Downloads/personal_projects/opengl/src/mesh.cpp
 
-CMakeFiles/shooter.dir/src/Mesh.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shooter.dir/src/Mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vatsa/Downloads/personal_projects/opengl/src/Mesh.cpp > CMakeFiles/shooter.dir/src/Mesh.cpp.i
+CMakeFiles/shooter.dir/src/mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shooter.dir/src/mesh.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vatsa/Downloads/personal_projects/opengl/src/mesh.cpp > CMakeFiles/shooter.dir/src/mesh.cpp.i
 
-CMakeFiles/shooter.dir/src/Mesh.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shooter.dir/src/Mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vatsa/Downloads/personal_projects/opengl/src/Mesh.cpp -o CMakeFiles/shooter.dir/src/Mesh.cpp.s
+CMakeFiles/shooter.dir/src/mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shooter.dir/src/mesh.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vatsa/Downloads/personal_projects/opengl/src/mesh.cpp -o CMakeFiles/shooter.dir/src/mesh.cpp.s
+
+CMakeFiles/shooter.dir/src/texture.cpp.o: CMakeFiles/shooter.dir/flags.make
+CMakeFiles/shooter.dir/src/texture.cpp.o: /Users/vatsa/Downloads/personal_projects/opengl/src/texture.cpp
+CMakeFiles/shooter.dir/src/texture.cpp.o: CMakeFiles/shooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/shooter.dir/src/texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shooter.dir/src/texture.cpp.o -MF CMakeFiles/shooter.dir/src/texture.cpp.o.d -o CMakeFiles/shooter.dir/src/texture.cpp.o -c /Users/vatsa/Downloads/personal_projects/opengl/src/texture.cpp
+
+CMakeFiles/shooter.dir/src/texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shooter.dir/src/texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vatsa/Downloads/personal_projects/opengl/src/texture.cpp > CMakeFiles/shooter.dir/src/texture.cpp.i
+
+CMakeFiles/shooter.dir/src/texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shooter.dir/src/texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vatsa/Downloads/personal_projects/opengl/src/texture.cpp -o CMakeFiles/shooter.dir/src/texture.cpp.s
+
+CMakeFiles/shooter.dir/src/player.cpp.o: CMakeFiles/shooter.dir/flags.make
+CMakeFiles/shooter.dir/src/player.cpp.o: /Users/vatsa/Downloads/personal_projects/opengl/src/player.cpp
+CMakeFiles/shooter.dir/src/player.cpp.o: CMakeFiles/shooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/shooter.dir/src/player.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shooter.dir/src/player.cpp.o -MF CMakeFiles/shooter.dir/src/player.cpp.o.d -o CMakeFiles/shooter.dir/src/player.cpp.o -c /Users/vatsa/Downloads/personal_projects/opengl/src/player.cpp
+
+CMakeFiles/shooter.dir/src/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shooter.dir/src/player.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vatsa/Downloads/personal_projects/opengl/src/player.cpp > CMakeFiles/shooter.dir/src/player.cpp.i
+
+CMakeFiles/shooter.dir/src/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shooter.dir/src/player.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vatsa/Downloads/personal_projects/opengl/src/player.cpp -o CMakeFiles/shooter.dir/src/player.cpp.s
+
+CMakeFiles/shooter.dir/src/Game.cpp.o: CMakeFiles/shooter.dir/flags.make
+CMakeFiles/shooter.dir/src/Game.cpp.o: /Users/vatsa/Downloads/personal_projects/opengl/src/Game.cpp
+CMakeFiles/shooter.dir/src/Game.cpp.o: CMakeFiles/shooter.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/shooter.dir/src/Game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/shooter.dir/src/Game.cpp.o -MF CMakeFiles/shooter.dir/src/Game.cpp.o.d -o CMakeFiles/shooter.dir/src/Game.cpp.o -c /Users/vatsa/Downloads/personal_projects/opengl/src/Game.cpp
+
+CMakeFiles/shooter.dir/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/shooter.dir/src/Game.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vatsa/Downloads/personal_projects/opengl/src/Game.cpp > CMakeFiles/shooter.dir/src/Game.cpp.i
+
+CMakeFiles/shooter.dir/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/shooter.dir/src/Game.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vatsa/Downloads/personal_projects/opengl/src/Game.cpp -o CMakeFiles/shooter.dir/src/Game.cpp.s
 
 # Object files for target shooter
 shooter_OBJECTS = \
@@ -148,7 +190,10 @@ shooter_OBJECTS = \
 "CMakeFiles/shooter.dir/src/camera.cpp.o" \
 "CMakeFiles/shooter.dir/src/glad.c.o" \
 "CMakeFiles/shooter.dir/src/Shader.cpp.o" \
-"CMakeFiles/shooter.dir/src/Mesh.cpp.o"
+"CMakeFiles/shooter.dir/src/mesh.cpp.o" \
+"CMakeFiles/shooter.dir/src/texture.cpp.o" \
+"CMakeFiles/shooter.dir/src/player.cpp.o" \
+"CMakeFiles/shooter.dir/src/Game.cpp.o"
 
 # External object files for target shooter
 shooter_EXTERNAL_OBJECTS =
@@ -157,12 +202,15 @@ shooter: CMakeFiles/shooter.dir/src/main.cpp.o
 shooter: CMakeFiles/shooter.dir/src/camera.cpp.o
 shooter: CMakeFiles/shooter.dir/src/glad.c.o
 shooter: CMakeFiles/shooter.dir/src/Shader.cpp.o
-shooter: CMakeFiles/shooter.dir/src/Mesh.cpp.o
+shooter: CMakeFiles/shooter.dir/src/mesh.cpp.o
+shooter: CMakeFiles/shooter.dir/src/texture.cpp.o
+shooter: CMakeFiles/shooter.dir/src/player.cpp.o
+shooter: CMakeFiles/shooter.dir/src/Game.cpp.o
 shooter: CMakeFiles/shooter.dir/build.make
 shooter: /opt/homebrew/lib/libSDL2-2.0.0.dylib
 shooter: /opt/homebrew/lib/libglm.dylib
 shooter: CMakeFiles/shooter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable shooter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable shooter"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shooter.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -14,12 +14,13 @@ Mesh::Mesh(const std::vector<float>& vertices, const std::vector<unsigned int>& 
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
     // Position: location 0, first 3 floats
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // Color: location 1, next 3 floats
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+    // UV: location 2, last 2 floats
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+
 
     glBindVertexArray(0);
 
@@ -37,7 +38,6 @@ Mesh::~Mesh() {
         glDeleteBuffers(1, &IBO);
     }
 }
-
 void Mesh::Draw() const {
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, indexCount_, GL_UNSIGNED_INT, 0);
