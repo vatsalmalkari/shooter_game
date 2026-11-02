@@ -2,24 +2,28 @@
 #include <SDL2/SDL.h>
 #include <algorithm>
 #include <iostream>
-
+float firecooldown = 0.0f;
 void Game::SetPlayer(Player* player) {
     player_ = player;
 }
 
 void Game::AddEntity(std::unique_ptr<Entity> entity) {
     entities_.push_back(std::move(entity));
-    std::cout << "bullet fired, entities: " << entities_.size() << std::endl;
 }
 
 
 void Game::Update(float deltaTime) {
     
     bool spaceDown = SDL_GetKeyboardState(nullptr)[SDL_SCANCODE_SPACE];
-    if (player_ && spaceDown && !spaceWasDown_) {
+    if (player_ && spaceDown && !spaceWasDown_ && firecooldown <= 0.0f) {
         AddEntity(player_->fire());
+        firecooldown = 0.1f; 
     }
     spaceWasDown_ = spaceDown;
+    firecooldown -= deltaTime;
+    if (firecooldown < 0.0f) {
+        firecooldown = 0.0f;
+    }
 
     for (auto& entity : entities_) {
         entity->Update(deltaTime);
