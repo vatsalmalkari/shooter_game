@@ -1,6 +1,6 @@
-CMakeFiles/shooter.dir/src/Mesh.cpp.o: \
+CMakeFiles/shooter.dir/src/mesh.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/SDKSettings.json \
-  /Users/vatsa/Downloads/personal_projects/opengl/src/Mesh.cpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/src/mesh.cpp \
   /Users/vatsa/Downloads/personal_projects/opengl/include/Mesh.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \

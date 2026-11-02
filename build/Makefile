@@ -113,6 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -224,6 +225,30 @@ src/camera.s: src/camera.cpp.s
 src/camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/src/camera.cpp.s
 .PHONY : src/camera.cpp.s
+
+src/enemy.o: src/enemy.cpp.o
+.PHONY : src/enemy.o
+
+# target to build an object file
+src/enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/src/enemy.cpp.o
+.PHONY : src/enemy.cpp.o
+
+src/enemy.i: src/enemy.cpp.i
+.PHONY : src/enemy.i
+
+# target to preprocess a source file
+src/enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/src/enemy.cpp.i
+.PHONY : src/enemy.cpp.i
+
+src/enemy.s: src/enemy.cpp.s
+.PHONY : src/enemy.s
+
+# target to generate assembly for a file
+src/enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/src/enemy.cpp.s
+.PHONY : src/enemy.cpp.s
 
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
@@ -366,6 +391,9 @@ help:
 	@echo "... src/camera.o"
 	@echo "... src/camera.i"
 	@echo "... src/camera.s"
+	@echo "... src/enemy.o"
+	@echo "... src/enemy.i"
+	@echo "... src/enemy.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
@@ -392,6 +420,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

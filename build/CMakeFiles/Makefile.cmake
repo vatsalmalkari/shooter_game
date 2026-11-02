@@ -11,6 +11,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.1.1/CMakeCCompiler.cmake"
   "CMakeFiles/4.1.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.1.1/CMakeSystem.cmake"
+  "CMakeFiles/VerifyGlobs.cmake"
+  "CMakeFiles/cmake.verify_globs"
   "/opt/homebrew/lib/cmake/SDL2/SDL2Config.cmake"
   "/opt/homebrew/lib/cmake/SDL2/SDL2ConfigVersion.cmake"
   "/opt/homebrew/lib/cmake/SDL2/SDL2Targets-release.cmake"

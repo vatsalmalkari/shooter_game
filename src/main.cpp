@@ -16,6 +16,7 @@
 #include <chrono>
 #include "player.hpp"
 #include "Game.hpp"
+#include "enemy.hpp"
 
 
 //global variables
@@ -134,13 +135,17 @@ void MainLoop() {
 
 int main() {
     InitializeProgram();
+
     gCamera = std::make_unique<Camera>();
     gShader = std::make_unique<Shader>("shaders/vert.glsl", "shaders/frag.glsl");
     gTexture = std::make_unique<Texture>("assets/screenshot.png");
+
     gGame = std::make_unique<Game>();
+    gGame->SetShader(gShader.get());
     auto player = std::make_unique<Player>(*gShader, *gTexture);
     gGame->SetPlayer(player.get());
     gGame->AddEntity(std::move(player));
+
     MainLoop();
     Cleanup();
     return 0;

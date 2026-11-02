@@ -85,12 +85,12 @@ clean: CMakeFiles/shooter.dir/clean
 CMakeFiles/shooter.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target shooter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target shooter"
 .PHONY : CMakeFiles/shooter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/shooter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/shooter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles 0
 .PHONY : CMakeFiles/shooter.dir/rule
@@ -102,7 +102,7 @@ shooter: CMakeFiles/shooter.dir/rule
 # codegen rule for target.
 CMakeFiles/shooter.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shooter.dir/build.make CMakeFiles/shooter.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Finished codegen for target shooter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target shooter"
 .PHONY : CMakeFiles/shooter.dir/codegen
 
 # clean rule for target.
@@ -117,6 +117,7 @@ CMakeFiles/shooter.dir/clean:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /Users/vatsa/Downloads/personal_projects/opengl/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
