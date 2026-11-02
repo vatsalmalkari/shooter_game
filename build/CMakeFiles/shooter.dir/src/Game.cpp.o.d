@@ -787,13 +787,6 @@ CMakeFiles/shooter.dir/src/Game.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/wstring_convert.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
   /Users/vatsa/Downloads/personal_projects/opengl/include/Entity.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/player.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/Mesh.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/glad/glad.h \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/KHR/khrplatform.h \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/Shader.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/Texture.hpp \
-  /Users/vatsa/Downloads/personal_projects/opengl/include/bullet.hpp \
   /opt/homebrew/include/glm/glm.hpp \
   /opt/homebrew/include/glm/detail/_fixes.hpp \
   /opt/homebrew/include/glm/detail/setup.hpp \
@@ -1015,6 +1008,13 @@ CMakeFiles/shooter.dir/src/Game.cpp.o: \
   /opt/homebrew/include/glm/vector_relational.hpp \
   /opt/homebrew/include/glm/integer.hpp \
   /opt/homebrew/include/glm/detail/func_integer.inl \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/player.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Mesh.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/glad/glad.h \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/KHR/khrplatform.h \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Shader.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Texture.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/bullet.hpp \
   /Users/vatsa/Downloads/personal_projects/opengl/include/enemy.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \

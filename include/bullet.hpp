@@ -12,6 +12,7 @@ public:
 
     void Update(float deltaTime) override;
     void Draw() override;
+    AABB GetBounds() const override;
 
 private:
     glm::vec3 position_;

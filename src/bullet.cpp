@@ -30,6 +30,10 @@ void Bullet::Update(float deltaTime) {
     }
 }
 
+Entity::AABB Bullet::GetBounds() const {
+    return { glm::vec2(position_.x, position_.y), glm::vec2(0.05f, 0.05f) };
+}
+
 void Bullet::Draw() {
     shader_->Use();
     glm::mat4 model = glm::translate(glm::mat4(1.0f), position_);

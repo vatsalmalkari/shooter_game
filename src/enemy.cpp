@@ -17,6 +17,10 @@ Enemy::Enemy(glm::vec3 start, glm::vec3 velocity, const Shader& shader)
     );
 }
 
+Entity::AABB Enemy::GetBounds() const {
+    return { glm::vec2(position_.x, position_.y), glm::vec2(0.2f, 0.2f) };
+}
+
 void Enemy::Update(float deltaTime) {
     if (!IsAlive()) return;
 

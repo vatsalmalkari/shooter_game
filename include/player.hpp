@@ -13,6 +13,7 @@ public:
     void Update(float deltaTime) override;
     void Draw() override;
     std::unique_ptr<Bullet> fire();
+    Entity::AABB GetBounds() const override;
     
 private:
     std::unique_ptr<Mesh> mesh_;

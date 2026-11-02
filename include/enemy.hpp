@@ -11,6 +11,9 @@ public:
 
     void Update(float deltaTime) override;
     void Draw() override;
+    void OnCollision(Entity* other);
+    AABB GetBounds() const override;
+    
 
 private:
     glm::vec3 position_;

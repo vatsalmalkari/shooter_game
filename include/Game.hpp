@@ -6,6 +6,7 @@
 #include "enemy.hpp"
 #include "Shader.hpp"
 #include <random>
+#include "bullet.hpp"
 
 class Game {
 public:
@@ -13,17 +14,20 @@ public:
     void Update(float deltaTime);
     void Draw();
     void SetPlayer(Player* player);
-    void SetShader(Shader* shader); 
+    void SetShader(const Shader& shader); 
     void AddEnemy(std::unique_ptr<Enemy> enemy);
+    void AddBullet(std::unique_ptr<Entity> bullet);
+
     
 private:
     std::vector<std::unique_ptr<Entity>> entities_;
     std::vector<std::unique_ptr<Enemy>> enemies_;
+    std::vector<std::unique_ptr<Entity>> bullets_;
     Player* player_ = nullptr;     
     float firecooldown = 0.0f;
     float spawnTimer_ = 1.0f;
     float randomX = 0.0f;
-    Shader* shader_ = nullptr;
+    const Shader* shader_ = nullptr;
     std::mt19937 rng_{std::random_device{}()};
     std::uniform_real_distribution<float> spawnXDist_{-1.0f, 1.0f};
     float spawnX_ = 0.0f;

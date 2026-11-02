@@ -5,6 +5,7 @@
 #include "Texture.hpp"
 #include "bullet.hpp"
 
+
 Player::Player(const Shader& shader, const Texture& texture)
     : shader_(&shader), texture_(&texture){
     modelLoc_ = shader.GetUniformLocation("u_ModelMatrix");    
@@ -47,3 +48,6 @@ std::unique_ptr<Bullet> Player::fire() {
     return std::make_unique<Bullet>(glm::vec3(x_, y_, 0), glm::vec3(0, 1.0f, 0), *shader_);
 }
 
+Entity::AABB Player::GetBounds() const {
+    return { glm::vec2(x_, y_), glm::vec2(0.5f, 0.5f) };
+}

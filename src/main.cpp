@@ -141,7 +141,7 @@ int main() {
     gTexture = std::make_unique<Texture>("assets/screenshot.png");
 
     gGame = std::make_unique<Game>();
-    gGame->SetShader(gShader.get());
+    gGame->SetShader(*gShader);
     auto player = std::make_unique<Player>(*gShader, *gTexture);
     gGame->SetPlayer(player.get());
     gGame->AddEntity(std::move(player));

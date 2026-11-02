@@ -12,6 +12,7 @@ public:
     Mesh& operator=(const Mesh&) = delete;
     Mesh(Mesh&& other) noexcept;
     Mesh& operator=(Mesh&& other) noexcept;
+    
     void Draw() const;
 private:
     GLuint VAO = 0, VBO = 0, IBO = 0;
