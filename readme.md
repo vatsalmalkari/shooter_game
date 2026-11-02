@@ -1,5 +1,4 @@
 
-````markdown
 # Shooter
 
 A small 2D shooter written in C++17 with OpenGL 4.1 core, SDL2, GLM, and GLAD. Move the player, shoot falling enemies, and keep your score above zero.
@@ -124,4 +123,3 @@ add any source files to src/, headers to include/, use commands.txt for referenc
 Modern C++: `unique_ptr`, move semantics, RAII, `override`, virtual destructors, and `std::remove_if` with erase.
 Game programming: a fixed-timestep loop, input handling, AABB collision, spawning on a timer, and a simple game state.
 OpenGL: VAO, VBO, and IBO setup, GLSL shaders with uniforms, textures with stb_image, and per-object model matrices.
-````
