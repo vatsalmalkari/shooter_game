@@ -48,12 +48,13 @@ void Game::Update(float deltaTime) {
     }
 
     spawnTimer_ -= deltaTime;
-    if (spawnTimer_ <= 0.0f && shader_) {
+    if (spawnTimer_ <= 0.0f && shader_ && enemyTexture_){
         spawnX_ = spawnXDist_(rng_);
         AddEnemy(std::make_unique<Enemy>(
-            glm::vec3(spawnX_, 1.5f, 0.0f),
-            glm::vec3(0.0f, -0.5f, 0.0f),
-            *shader_));
+        glm::vec3(spawnX_, 1.5f, 0.0f),
+        glm::vec3(0.0f, -0.5f, 0.0f),
+        *shader_,
+        *enemyTexture_));
         spawnTimer_ = 1.0f;
     }
 
@@ -142,4 +143,8 @@ void Game::SetWindow(SDL_Window* window) {
 
 bool Game::isGameOver() const {
     return gameOver_;
+}
+
+void Game::SetEnemyTexture(const Texture& enemyTexture) {
+    enemyTexture_ = &enemyTexture;
 }

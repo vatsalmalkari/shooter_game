@@ -29,6 +29,7 @@ std::unique_ptr<Shader> gShader;
 std::unique_ptr<Texture> gTexture;
 std::unique_ptr<Game> gGame;
 std::unique_ptr<Camera> gCamera;
+std::unique_ptr<Texture> gEnemyTexture;
 
 void GetOpenGLVersionInfo() {
     std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
@@ -65,6 +66,8 @@ void InitializeProgram() {
         exit(1);
     }
     GetOpenGLVersionInfo();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void Input(){
@@ -89,6 +92,9 @@ void PreDraw() {
     glUniform1i(gShader->GetUniformLocation("u_Texture"), 0);
     glm::mat4 projection = glm::perspective(glm::radians(45.0f),(float)gScreenWidth / (float)gScreenHeight, 0.1f, 10.0f);
     glUniformMatrix4fv(gShader->GetUniformLocation("u_Projection"), 1, GL_FALSE, &projection[0][0]);
+    static float u_time = 0.0f;
+    u_time = (float)SDL_GetTicks() / 1000.0f;
+    glUniform1f(gShader->GetUniformLocation("u_Time"), u_time);
 }
 
 void Draw(){
@@ -126,6 +132,7 @@ void MainLoop() {
   void Cleanup() {
     gGame.reset();
     gTexture.reset();
+    gEnemyTexture.reset();
     gShader.reset();
     gCamera.reset();
     SDL_GL_DeleteContext(gOpenGLContext);
@@ -139,13 +146,16 @@ int main() {
     gCamera = std::make_unique<Camera>();
     gShader = std::make_unique<Shader>("shaders/vert.glsl", "shaders/frag.glsl");
     gTexture = std::make_unique<Texture>("assets/screenshot.png");
+    gEnemyTexture = std::make_unique<Texture>("assets/enemy.png");
 
     gGame = std::make_unique<Game>();
     gGame->SetShader(*gShader);
     gGame->SetWindow(gGraphicsApplicationWindow);
     auto player = std::make_unique<Player>(*gShader, *gTexture);
+
     gGame->SetPlayer(player.get());
     gGame->AddEntity(std::move(player));
+   gGame->SetEnemyTexture(*gEnemyTexture);
 
     MainLoop();
     Cleanup();

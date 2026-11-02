@@ -2,8 +2,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-Enemy::Enemy(glm::vec3 start, glm::vec3 velocity, const Shader& shader)
-    : position_(start), velocity_(velocity), shader_(&shader) {
+Enemy::Enemy(glm::vec3 start, glm::vec3 velocity, const Shader& shader, const Texture& texture)
+    : position_(start), velocity_(velocity), shader_(&shader), texture_(&texture) {
     modelLoc_ = shader.GetUniformLocation("u_ModelMatrix");
 
     mesh_ = std::make_unique<Mesh>(
@@ -34,5 +34,6 @@ void Enemy::Draw() {
     shader_->Use();
     glm::mat4 model = glm::translate(glm::mat4(1.0f), position_);
     glUniformMatrix4fv(modelLoc_, 1, GL_FALSE, glm::value_ptr(model));
+    texture_->Bind(0);
     mesh_->Draw();
 }

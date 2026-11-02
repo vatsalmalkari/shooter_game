@@ -1012,6 +1012,7 @@ CMakeFiles/shooter.dir/src/enemy.cpp.o: \
   /Users/vatsa/Downloads/personal_projects/opengl/include/glad/glad.h \
   /Users/vatsa/Downloads/personal_projects/opengl/include/KHR/khrplatform.h \
   /Users/vatsa/Downloads/personal_projects/opengl/include/Shader.hpp \
+  /Users/vatsa/Downloads/personal_projects/opengl/include/Texture.hpp \
   /opt/homebrew/include/glm/gtc/matrix_transform.hpp \
   /opt/homebrew/include/glm/gtc/../mat4x4.hpp \
   /opt/homebrew/include/glm/gtc/../vec2.hpp \

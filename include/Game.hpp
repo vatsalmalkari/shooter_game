@@ -5,6 +5,7 @@
 #include "player.hpp"
 #include "enemy.hpp"
 #include "Shader.hpp"
+#include "Texture.hpp"
 #include <random>
 #include "bullet.hpp"
 #include <SDL2/SDL.h>
@@ -23,7 +24,7 @@ public:
     void AddScore(int points);
     void SetWindow(SDL_Window* window);
     void SubtractScore(int points);
-
+    void SetEnemyTexture(const Texture& enemyTexture);
     bool isGameOver() const;
     void UpdateWindowTitle();
     
@@ -35,6 +36,7 @@ private:
     float firecooldown = 0.0f;
     float spawnTimer_ = 1.0f;
     const Shader* shader_ = nullptr;
+    const Texture* enemyTexture_ = nullptr;
     std::mt19937 rng_{std::random_device{}()};
     std::uniform_real_distribution<float> spawnXDist_{-1.0f, 1.0f};
     float spawnX_ = 0.0f;
