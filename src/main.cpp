@@ -30,6 +30,7 @@ std::unique_ptr<Texture> gTexture;
 std::unique_ptr<Game> gGame;
 std::unique_ptr<Camera> gCamera;
 std::unique_ptr<Texture> gEnemyTexture;
+std::unique_ptr<Mesh> gQuad;
 
 void GetOpenGLVersionInfo() {
     std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
@@ -135,6 +136,7 @@ void MainLoop() {
     gEnemyTexture.reset();
     gShader.reset();
     gCamera.reset();
+    gQuad.reset();
     SDL_GL_DeleteContext(gOpenGLContext);
     SDL_DestroyWindow(gGraphicsApplicationWindow);
     SDL_Quit();
@@ -147,16 +149,25 @@ int main() {
     gShader = std::make_unique<Shader>("shaders/vert.glsl", "shaders/frag.glsl");
     gTexture = std::make_unique<Texture>("assets/screenshot.png");
     gEnemyTexture = std::make_unique<Texture>("assets/enemy.png");
+    gQuad = std::make_unique<Mesh>(
+    std::vector<float>{
+        -0.5f, -0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  0.0f, 0.0f,
+         0.5f, -0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  1.0f, 0.0f,
+        -0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  0.0f, 1.0f,
+         0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 1.0f,  1.0f, 1.0f
+    },
+    std::vector<unsigned int>{2, 0, 1, 3, 2, 1}
+);
 
     gGame = std::make_unique<Game>();
     gGame->SetShader(*gShader);
     gGame->SetWindow(gGraphicsApplicationWindow);
-    auto player = std::make_unique<Player>(*gShader, *gTexture);
-
+    gGame->SetQuad(*gQuad);
+    gGame->SetEnemyTexture(*gEnemyTexture);
+    auto player = std::make_unique<Player>(*gShader, *gTexture, *gQuad);
     gGame->SetPlayer(player.get());
     gGame->AddEntity(std::move(player));
-   gGame->SetEnemyTexture(*gEnemyTexture);
-
+    gGame->SetEnemyTexture(*gEnemyTexture);
     MainLoop();
     Cleanup();
     return 0;

@@ -27,6 +27,7 @@ public:
     void SetEnemyTexture(const Texture& enemyTexture);
     bool isGameOver() const;
     void UpdateWindowTitle();
+    void SetQuad(const Mesh& quad);
     
 private:
     std::vector<std::unique_ptr<Entity>> entities_;
@@ -43,5 +44,6 @@ private:
     int score_ = 0;
     SDL_Window* window_ = nullptr;
     bool gameOver_ = false;
+    const Mesh* quad_ = nullptr;
 
 };

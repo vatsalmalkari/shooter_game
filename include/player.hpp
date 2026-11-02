@@ -9,14 +9,16 @@
 
 class Player  : public Entity {
 public:
-    Player(const Shader& shader, const Texture& texture);
+    Player(const Shader& shader, const Texture& texture, const Mesh& mesh);
     void Update(float deltaTime) override;
     void Draw() override;
     std::unique_ptr<Bullet> fire();
     Entity::AABB GetBounds() const override;
+    float size_ = 0.75f;
+    
     
 private:
-    std::unique_ptr<Mesh> mesh_;
+    const Mesh* mesh_ = nullptr;
     float x_ = 0.0f;
     float y_ = 0.0f;
     float speed_ = 1.0f;
