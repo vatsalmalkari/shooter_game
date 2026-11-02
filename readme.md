@@ -80,42 +80,78 @@ Lesson: decide who owns each object in writing (the README table helps), and mak
 .
 ├── assets
 │   ├── enemy.png
+
 │   └── screenshot.png
+
 ├── CMakeLists.txt
+
 ├── commands.txt
+
 ├── episodes
+
 │   ├── main
+
 │   └── main.cpp
+
 ├── include
+
 │   ├── bullet.hpp
+
 │   ├── camera.hpp
+
 │   ├── enemy.hpp
+
 │   ├── Entity.hpp
+
 │   ├── Game.hpp
+
 │   ├── glad
+
 │   │   └── glad.h
+
 │   ├── KHR
+
 │   │   └── khrplatform.h
+
 │   ├── Mesh.hpp
+
 │   ├── player.hpp
+
 │   ├── Shader.hpp
+
 │   ├── stb_image.h
+
 │   └── Texture.hpp
+
 ├── readme.md
+
 ├── shaders
+
 │   ├── frag.glsl
+
 │   └── vert.glsl
+
 └── src
     ├── bullet.cpp
+    |
     ├── camera.cpp
+    |
     ├── enemy.cpp
+    |
     ├── Game.cpp
+    |
     ├── glad.c
+    |
     ├── main.cpp
+    |
     ├── mesh.cpp
+    |
     ├── player.cpp
+    |
     ├── Shader.cpp
+    |
     └── texture.cpp
+    
 
 add any source files to src/, headers to include/, use commands.txt for reference.
 ## What this project demonstrates
