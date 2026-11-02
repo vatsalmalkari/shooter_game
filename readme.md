@@ -4,6 +4,9 @@
 
 A small 2D shooter written in C++17 with OpenGL 4.1 core, SDL2, GLM, and GLAD. Move the player, shoot falling enemies, and keep your score above zero.
 
+<img width="1917" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e9dbfaab-2527-44e7-b809-f8e9239cff0b" />
+
+
 ## Controls
 
 | Arrow keys -> Move the player |
