@@ -142,6 +142,7 @@ int main() {
 
     gGame = std::make_unique<Game>();
     gGame->SetShader(*gShader);
+    gGame->SetWindow(gGraphicsApplicationWindow);
     auto player = std::make_unique<Player>(*gShader, *gTexture);
     gGame->SetPlayer(player.get());
     gGame->AddEntity(std::move(player));

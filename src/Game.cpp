@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cmath>
 #include <glm/glm.hpp>
+#include <string>
 
 namespace {
 bool Overlaps(const Entity::AABB& a, const Entity::AABB& b) {
@@ -32,6 +33,9 @@ void Game::AddEnemy(std::unique_ptr<Enemy> enemy) {
 }
 
 void Game::Update(float deltaTime) {
+    if (gameOver_){
+        return;
+    }
     firecooldown -= deltaTime;
     if (firecooldown < 0.0f) {
         firecooldown = 0.0f;
@@ -65,21 +69,31 @@ void Game::Update(float deltaTime) {
 
     for (auto& bullet : bullets_) {
         if (!bullet->IsAlive()) continue;
+            for (auto& enemy : enemies_) {
+                if (enemy->IsAlive() && Overlaps(bullet->GetBounds(), enemy->GetBounds())) {
+                    bullet->Kill();
+                    enemy->Kill();
+                    AddScore(2);
+                    break;
+                }
+            }
+    }
+
+    if (player_) {
         for (auto& enemy : enemies_) {
-            if (enemy->IsAlive() && Overlaps(bullet->GetBounds(), enemy->GetBounds())) {
-                bullet->Kill();
+            if (enemy->IsAlive() && Overlaps(player_->GetBounds(), enemy->GetBounds())) {
                 enemy->Kill();
-                break;
+                SubtractScore(1);
             }
         }
     }
 
-    entities_.erase(std::remove_if(entities_.begin(), entities_.end(),
-        [](const std::unique_ptr<Entity>& e) { return !e->IsAlive(); }), entities_.end());
-    bullets_.erase(std::remove_if(bullets_.begin(), bullets_.end(),
-        [](const std::unique_ptr<Entity>& e) { return !e->IsAlive(); }), bullets_.end());
-    enemies_.erase(std::remove_if(enemies_.begin(), enemies_.end(),
-        [](const std::unique_ptr<Enemy>& e) { return !e->IsAlive(); }), enemies_.end());
+    entities_.erase(std::remove_if(entities_.begin(), entities_.end(), [](const std::unique_ptr<Entity>& e) { return !e->IsAlive(); }), entities_.end());
+    
+    bullets_.erase(std::remove_if(bullets_.begin(), bullets_.end(), [](const std::unique_ptr<Entity>& e) { return !e->IsAlive(); }), bullets_.end());
+
+    enemies_.erase(std::remove_if(enemies_.begin(), enemies_.end(), [](const std::unique_ptr<Enemy>& e) { return !e->IsAlive(); }), enemies_.end());
+
 }
 
 void Game::Draw() {
@@ -92,4 +106,40 @@ void Game::Draw() {
     for (auto& enemy : enemies_) {
         enemy->Draw();
     }
+}
+
+int Game::GetScore() const {
+    return score_;
+}
+
+void Game::UpdateWindowTitle() {
+    if (window_) {
+        std::string title = "Score: " + std::to_string(score_);
+        if(gameOver_) {
+            title += " - Game Over";
+        }
+        SDL_SetWindowTitle(window_, title.c_str());
+    }
+}
+
+void Game::AddScore(int points) {
+    score_ += points;
+    UpdateWindowTitle();
+}
+
+void Game::SubtractScore(int points) {
+    score_ -= points;
+    if (score_ < 0) {
+        gameOver_ = true;
+    }
+    UpdateWindowTitle();
+}
+
+void Game::SetWindow(SDL_Window* window) {
+    window_ = window;
+    UpdateWindowTitle();
+}
+
+bool Game::isGameOver() const {
+    return gameOver_;
 }

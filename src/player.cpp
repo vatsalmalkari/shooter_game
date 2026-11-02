@@ -5,7 +5,6 @@
 #include "Texture.hpp"
 #include "bullet.hpp"
 
-
 Player::Player(const Shader& shader, const Texture& texture)
     : shader_(&shader), texture_(&texture){
     modelLoc_ = shader.GetUniformLocation("u_ModelMatrix");    
