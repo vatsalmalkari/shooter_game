@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/shooter.dir/src/Game.cpp.o.d"
   "CMakeFiles/shooter.dir/src/Shader.cpp.o"
   "CMakeFiles/shooter.dir/src/Shader.cpp.o.d"
+  "CMakeFiles/shooter.dir/src/bullet.cpp.o"
+  "CMakeFiles/shooter.dir/src/bullet.cpp.o.d"
   "CMakeFiles/shooter.dir/src/camera.cpp.o"
   "CMakeFiles/shooter.dir/src/camera.cpp.o.d"
   "CMakeFiles/shooter.dir/src/glad.c.o"

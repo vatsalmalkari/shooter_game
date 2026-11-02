@@ -4,7 +4,7 @@
 #include "Mesh.hpp"
 #include "Shader.hpp"
 #include "Texture.hpp"
-
+#include "bullet.hpp"
 
 
 class Player  : public Entity {
@@ -12,7 +12,8 @@ public:
     Player(const Shader& shader, const Texture& texture);
     void Update(float deltaTime) override;
     void Draw() override;
-
+    std::unique_ptr<Bullet> fire();
+    
 private:
     std::unique_ptr<Mesh> mesh_;
     float x_ = 0.0f;

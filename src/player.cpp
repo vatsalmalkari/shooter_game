@@ -3,6 +3,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include "Texture.hpp"
+#include "bullet.hpp"
 
 Player::Player(const Shader& shader, const Texture& texture)
     : shader_(&shader), texture_(&texture){
@@ -34,7 +35,6 @@ void Player::Update(float deltaTime) {
     }
 }
 
-
 void Player::Draw() {
     shader_->Use();
     texture_->Bind(0);
@@ -42,3 +42,8 @@ void Player::Draw() {
     glUniformMatrix4fv(modelLoc_, 1, GL_FALSE, &model[0][0]);
     mesh_->Draw();
 }
+
+std::unique_ptr<Bullet> Player::fire() {
+    return std::make_unique<Bullet>(glm::vec3(x_, y_, 0), glm::vec3(0, 1.0f, 0), *shader_);
+}
+

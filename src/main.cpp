@@ -16,7 +16,6 @@
 #include <chrono>
 #include "player.hpp"
 #include "Game.hpp"
-#include "Entity.hpp"
 
 
 //global variables
@@ -27,7 +26,6 @@ SDL_GLContext gOpenGLContext = nullptr;
 bool gQuit = false;
 std::unique_ptr<Shader> gShader;
 std::unique_ptr<Texture> gTexture;
-std::unique_ptr<Player> gPlayer;
 std::unique_ptr<Game> gGame;
 std::unique_ptr<Camera> gCamera;
 
@@ -126,7 +124,6 @@ void MainLoop() {
 
   void Cleanup() {
     gGame.reset();
-    gPlayer.reset();
     gTexture.reset();
     gShader.reset();
     gCamera.reset();
@@ -140,10 +137,10 @@ int main() {
     gCamera = std::make_unique<Camera>();
     gShader = std::make_unique<Shader>("shaders/vert.glsl", "shaders/frag.glsl");
     gTexture = std::make_unique<Texture>("assets/screenshot.png");
-    gPlayer = std::make_unique<Player>(*gShader, *gTexture);
     gGame = std::make_unique<Game>();
-    gGame->AddEntity(std::make_unique<Player>(*gShader, *gTexture));
-
+    auto player = std::make_unique<Player>(*gShader, *gTexture);
+    gGame->SetPlayer(player.get());
+    gGame->AddEntity(std::move(player));
     MainLoop();
     Cleanup();
     return 0;
